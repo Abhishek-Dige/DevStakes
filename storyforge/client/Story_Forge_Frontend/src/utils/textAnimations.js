@@ -1,0 +1,3 @@
+/**
+ * Text animation utility functions
+ */
