@@ -189,7 +189,7 @@
   font-weight: 700;
   font-size: 1.125rem;
   border-radius: 9999px;
-  border: none;
+  border: 1px solid rgba(255,255,255,0.05);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -199,10 +199,15 @@
 
 .btn-secondary-large:hover {
   background-color: rgba(255,255,255,0.1);
+  border-color: rgba(0, 229, 255, 0.5);
+  box-shadow: 0 0 50px rgba(0,229,255,0.6);
 }
 
 .btn-secondary-large:active {
   transform: scale(0.95);
+  background-color: rgba(0, 229, 255, 0.2);
+  border-color: rgba(0, 229, 255, 1);
+  box-shadow: 0 0 50px rgba(0, 229, 255, 0.8), inset 0 0 30px rgba(0, 229, 255, 0.6);
 }
 
 .hero-stats {
