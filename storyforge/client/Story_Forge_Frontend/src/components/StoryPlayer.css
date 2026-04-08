@@ -55,18 +55,29 @@
   align-items: center;
   gap: 0.5rem;
   background: none;
-  border: none;
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
   color: var(--color-on-surface-variant);
   font-family: var(--font-label);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 0.75rem;
   cursor: pointer;
-  transition: color 0.3s;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .btn-back-hud:hover {
   color: var(--color-primary);
+  border-color: rgba(0, 229, 255, 0.5);
+  box-shadow: 0 0 50px rgba(0,229,255,0.6);
+}
+
+.btn-back-hud:active {
+  transform: scale(0.95);
+  background: rgba(0, 229, 255, 0.2);
+  border-color: rgba(0, 229, 255, 1);
+  box-shadow: 0 0 50px rgba(0, 229, 255, 0.8), inset 0 0 30px rgba(0, 229, 255, 0.6);
 }
 
 .hud-indicator {
@@ -143,7 +154,14 @@
   background-color: rgba(0, 229, 255, 0.1);
   border-color: rgba(0, 229, 255, 0.5);
   transform: translateX(10px);
-  box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+  box-shadow: 0 0 50px rgba(0, 229, 255, 0.6);
+}
+
+.choice-btn:active {
+  transform: scale(0.95) translateX(10px);
+  background-color: rgba(0, 229, 255, 0.2);
+  border-color: rgba(0, 229, 255, 1);
+  box-shadow: 0 0 50px rgba(0, 229, 255, 0.8), inset 0 0 30px rgba(0, 229, 255, 0.6);
 }
 
 .choice-indicator {
@@ -320,8 +338,8 @@
   font-family: var(--font-headline);
   font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s;
-  border: none;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid transparent;
 }
 
 .primary-action {
@@ -333,6 +351,15 @@
 .primary-action:hover {
   background-color: white;
   transform: scale(1.05);
+  border-color: rgba(0, 229, 255, 0.5);
+  box-shadow: 0 0 50px rgba(0,229,255,0.6);
+}
+
+.primary-action:active {
+  transform: scale(0.95);
+  background: rgba(0, 229, 255, 0.2);
+  border-color: rgba(0, 229, 255, 1);
+  box-shadow: 0 0 50px rgba(0, 229, 255, 0.8), inset 0 0 30px rgba(0, 229, 255, 0.6);
 }
 
 .secondary-action {
@@ -344,6 +371,15 @@
 .secondary-action:hover {
   background-color: rgba(255,255,255,0.1);
   transform: scale(1.05);
+  border-color: rgba(0, 229, 255, 0.5);
+  box-shadow: 0 0 50px rgba(0,229,255,0.6);
+}
+
+.secondary-action:active {
+  transform: scale(0.95);
+  background: rgba(0, 229, 255, 0.2);
+  border-color: rgba(0, 229, 255, 1);
+  box-shadow: 0 0 50px rgba(0, 229, 255, 0.8), inset 0 0 30px rgba(0, 229, 255, 0.6);
 }
 
 /* Flex layout utilities mirroring tailwind for inside React components */

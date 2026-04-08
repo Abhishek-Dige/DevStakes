@@ -20,14 +20,25 @@
   font-family: var(--font-headline);
   font-weight: 700;
   background: none;
-  border: none;
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   width: fit-content;
 }
 
 .btn-back:hover {
   gap: 1rem;
+  border-color: rgba(0, 229, 255, 0.5);
+  box-shadow: 0 0 50px rgba(0,229,255,0.6);
+}
+
+.btn-back:active {
+  transform: scale(0.95);
+  background: rgba(0, 229, 255, 0.2);
+  border-color: rgba(0, 229, 255, 1);
+  box-shadow: 0 0 50px rgba(0, 229, 255, 0.8), inset 0 0 30px rgba(0, 229, 255, 0.6);
 }
 
 .genre-title {
