@@ -55,18 +55,23 @@
   color: var(--color-on-primary-fixed);
   font-weight: bold;
   border-radius: 9999px;
-  border: none;
+  border: 1px solid transparent;
   cursor: pointer;
   box-shadow: 0 0 15px rgba(0,229,255,0.3);
-  transition: transform 0.2s;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .primary-btn:hover {
-  transform: scale(0.95);
+  border-color: rgba(0, 229, 255, 0.5);
+  box-shadow: 0 0 50px rgba(0,229,255,0.6);
+  transform: scale(1.02);
 }
 
 .primary-btn:active {
-  transform: scale(0.9);
+  transform: scale(0.95);
+  background: rgba(0, 229, 255, 0.2);
+  border-color: rgba(0, 229, 255, 1);
+  box-shadow: 0 0 50px rgba(0, 229, 255, 0.8), inset 0 0 30px rgba(0, 229, 255, 0.6);
 }
 
 .user-profile-icon {
@@ -289,11 +294,17 @@
 }
 
 .social-btn:hover {
-  background: rgba(var(--primary-rgb), 0.2);
-  border-color: var(--color-primary);
+  border-color: rgba(0, 229, 255, 0.5);
+  box-shadow: 0 0 50px rgba(0,229,255,0.6);
   color: var(--color-primary);
   transform: translateY(-5px) scale(1.1);
-  box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.4);
+}
+
+.social-btn:active {
+  transform: scale(0.95);
+  background: rgba(0, 229, 255, 0.2);
+  border-color: rgba(0, 229, 255, 1);
+  box-shadow: 0 0 50px rgba(0, 229, 255, 0.8), inset 0 0 30px rgba(0, 229, 255, 0.6);
 }
 
 @media (max-width: 1024px) {
