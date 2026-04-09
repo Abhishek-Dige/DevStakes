@@ -196,6 +196,8 @@
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
   text-align: left;
+  position: relative;
+  z-index: 10;
 }
 
 .choice-btn-modern:hover {
@@ -245,9 +247,9 @@
   position: relative;
   min-height: 100vh;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  padding: 12rem 4rem 8rem;
+  padding: 8rem 2rem;
   background-color: var(--color-background);
   z-index: 100;
 }
@@ -266,7 +268,7 @@
   max-width: 56rem; /* 4xl */
   display: flex;
   flex-direction: column;
-  gap: 5rem;
+  gap: 3rem;
 }
 
 .summary-header {
@@ -392,7 +394,7 @@
   display: flex;
   gap: 2.5rem;
   justify-content: center;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 .btn-summary-action {
@@ -406,6 +408,9 @@
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   border: 1px solid transparent;
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
 }
 
 .primary-action {
@@ -416,6 +421,7 @@
 
 .primary-action:hover {
   background-color: white;
+  color: #0f0a12;
   transform: scale(1.05);
   border-color: rgba(0, 229, 255, 0.5);
   box-shadow: 0 0 50px rgba(0,229,255,0.6);

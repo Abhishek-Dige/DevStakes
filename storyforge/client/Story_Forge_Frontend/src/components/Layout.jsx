@@ -80,48 +80,9 @@ export default function Layout({ children }) {
         </div>
       </header>
 
-<<<<<<< HEAD
-=======
-      {/* SideNavBar Perspective Rail */}
-      <aside className="side-nav-bar glass-panel">
-        <div className="profile-container click-target" onClick={() => navigate('/identity', { state: { transition: 'slide_up' } })}>
-          <div className="profile-image-wrapper">
-            <img 
-              className="profile-img" 
-              src="/assets/profile-avatar.png" 
-              alt="Profile"
-              referrerPolicy="no-referrer"
-            />
-          </div>
-        </div>
-        <div className="nav-items-container flex flex-col items-center">
-          <NavItem 
-            icon={<BookOpen size={24} />} 
-            label="Home" 
-            active={currentPath === '/' || currentPath === '/landing'} 
-            onClick={() => navigate('/', { state: { transition: 'push_back' } })}
-          />
-          <NavItem 
-            icon={<Library size={24} />} 
-            label="Library" 
-            active={currentPath === '/genre-selection'} 
-            onClick={() => navigate('/genre-selection', { state: { transition: 'push_back' } })}
-          />
-          <NavItem 
-            icon={<BarChart3 size={24} />} 
-            label="Stats" 
-            active={false} 
-          />
-          <NavItem 
-            icon={<Network size={24} />} 
-            label="Nexus" 
-            active={currentPath === '/community-hub'} 
-            onClick={() => navigate('/community-hub', { state: { transition: 'push_back' } })}
-          />
-        </div>
-      </aside>
 
->>>>>>> d1b5dd5a593e05aae0351323533ec8c029936498
+      {/* Main Content Area */}
+
       <main className="main-content min-h-screen">
         {children}
       </main>

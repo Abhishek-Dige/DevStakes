@@ -208,7 +208,7 @@ function GameScene({ node, onChoice, onNavigate, isLoading, history }) {
                 transition={{ delay: 0.6 }}
                 className="choices-container-inline mt-12 pb-8"
               >
-                <div className="flex flex-col gap-8">
+                <div className="flex flex-col gap-4">
                   {node.choices.map((choice, idx) => (
                     <motion.button
                       key={`${node.text}-${idx}`}
