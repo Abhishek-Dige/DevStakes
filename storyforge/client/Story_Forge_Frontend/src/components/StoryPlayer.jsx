@@ -131,15 +131,6 @@ export default function StoryPlayer() {
 
 function GameScene({ node, onChoice, onNavigate, isLoading, history }) {
   const bottomRef = useRef(null);
-  
-  useEffect(() => {
-    if (bottomRef.current) {
-      bottomRef.current.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'nearest'
-      });
-    }
-  }, [node, history, isLoading]);
 
   if (!node) return null;
 
