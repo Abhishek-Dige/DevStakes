@@ -72,7 +72,7 @@ export default function Layout({ children }) {
             >
               <img 
                 className="w-full h-full object-cover" 
-                src="https://picsum.photos/seed/architect/100/100" 
+                src="/assets/profile-avatar.png" 
                 alt="Profile"
               />
             </div>
@@ -80,8 +80,7 @@ export default function Layout({ children }) {
         </div>
       </header>
 
-<<<<<<< HEAD
-=======
+
       {/* SideNavBar Perspective Rail */}
       <aside className="side-nav-bar glass-panel">
         <div className="profile-container click-target" onClick={() => navigate('/identity', { state: { transition: 'slide_up' } })}>
@@ -110,7 +109,7 @@ export default function Layout({ children }) {
           <NavItem 
             icon={<BarChart3 size={24} />} 
             label="Stats" 
-            active={location.pathname === '/stats'} 
+            active={currentPath === '/stats'} 
             onClick={() => navigate('/stats')}
           />
           <NavItem 
@@ -122,7 +121,6 @@ export default function Layout({ children }) {
         </div>
       </aside>
 
->>>>>>> d1b5dd5a593e05aae0351323533ec8c029936498
       <main className="main-content min-h-screen">
         {children}
       </main>
