@@ -73,17 +73,6 @@ export default function CommunityHub() {
         {/* Sidebar */}
         <aside className="hub-sidebar">
           <div className="sidebar-panel glass-panel">
-            <h3>Top Architects</h3>
-            <div className="architect-list">
-              <ArchitectItem name="Nova_Prime" rank={1} level={99} />
-              <ArchitectItem name="Shadow_Weaver" rank={2} level={94} />
-              <ArchitectItem name="Elias_Thorne" rank={3} level={88} isUser onClick={() => navigate('/identity', { state: { transition: 'slide_up' } })} />
-              <ArchitectItem name="Luna_X" rank={4} level={82} />
-            </div>
-            <button className="btn-sidebar-viewall">View Leaderboard</button>
-          </div>
-
-          <div className="sidebar-panel glass-panel">
             <h3>Active Realms</h3>
             <div className="realm-list">
               <RealmItem name="Neon Syndicate" players={12400} />
