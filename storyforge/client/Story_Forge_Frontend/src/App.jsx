@@ -36,7 +36,10 @@ const variants = {
 export default function App() {
   const location = useLocation();
   const transitionType = location.state?.transition || 'fade';
-  const currentVariants = variants[transitionType];
+  // Gameplay and create-story are full-screen — always use fade to avoid x-overflow during transition
+  const isImmersive = ['/gameplay', '/create-story'].includes(location.pathname);
+  const currentVariants = isImmersive ? variants.fade : variants[transitionType];
+
 
   return (
     <Layout>

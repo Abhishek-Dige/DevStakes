@@ -87,6 +87,11 @@
   --color-inverse-primary: #006875;
 }*/
 
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--color-background);
   color: var(--color-on-surface);
@@ -97,7 +102,8 @@ body {
   padding: 0;
   min-height: 100vh;
   overflow-x: hidden;
-  scroll-behavior: smooth;
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Single global scrollbar */

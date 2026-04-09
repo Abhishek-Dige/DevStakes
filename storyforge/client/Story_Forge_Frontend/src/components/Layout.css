@@ -15,7 +15,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 1.5rem;
+  will-change: transform;
+  transform: translateZ(0);
 }
+
 
 .header-left {
   display: flex;
