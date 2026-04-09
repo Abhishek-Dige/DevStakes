@@ -1,4 +1,55 @@
+/* --- KEYFRAME DEFINITIONS --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatIcon {
+  0%, 100% { transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg) scale(1.4) translateY(0); }
+  50% { transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg) scale(1.4) translateY(-15px); }
+}
+/* --- NEW "PARTICLE BLAST" KEYFRAMES --- */
+@keyframes particleBlast {
+  0% {
+    box-shadow: 0 0 0 0px var(--accent);
+    transform: scale(1);
+  }
+  100% {
+    /* Explode the shadow outward and fade it out */
+    box-shadow: 0 -25px 30px -10px transparent,
+               15px -15px 30px -10px transparent,
+               -15px -15px 30px -10px transparent;
+    transform: scale(1.05); /* Very slight grow */
+  }
+}
+
 .counter {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--accent); /* This now uses Hot Pink! */
+  background: var(--accent-bg); /* This now uses faint pink glow! */
+  border: 2px solid transparent;
+  transition: all 0.3s ease; /* We changed this to 'all' to smoothly transition everything */
+  margin-bottom: 24px;
+  cursor: pointer;
+  position: relative; /* Essential for containing the effect */
+
+  &:hover {
+    border-color: var(--accent-border); /* Updated to Pink border */
+    background-color: rgba(255, 105, 180, 0.2); /* Intensify background glow */
+    
+    /* ADD THIS LINE - This is the blast effect! */
+    animation: particleBlast 0.6s ease-out forwards; 
+  }
+}
+/*.counter {
   font-size: 16px;
   padding: 5px 10px;
   border-radius: 5px;
@@ -15,7 +66,7 @@
     outline: 2px solid var(--accent);
     outline-offset: 2px;
   }
-}
+}*/
 
 .hero {
   position: relative;
@@ -44,6 +95,7 @@
     height: 28px;
     transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
       scale(1.4);
+      animation: floatIcon 4s ease-in-out infinite;
   }
 
   .vite {
@@ -63,6 +115,7 @@
   place-content: center;
   place-items: center;
   flex-grow: 1;
+  animation: fadeInUp 0.8s ease-out forwards;
 
   @media (max-width: 1024px) {
     padding: 32px 20px 24px;
@@ -74,6 +127,7 @@
   display: flex;
   border-top: 1px solid var(--border);
   text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   & > div {
     flex: 1 1 0;
@@ -82,6 +136,9 @@
       padding: 24px 20px;
     }
   }
+  #next-steps ul a:hover {
+  transform: translateY(-5px); 
+}
 
   .icon {
     margin-bottom: 16px;
@@ -182,3 +239,4 @@
     border-right-color: var(--border);
   }
 }
+
