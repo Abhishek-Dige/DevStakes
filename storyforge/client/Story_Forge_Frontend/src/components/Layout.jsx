@@ -110,7 +110,8 @@ export default function Layout({ children }) {
           <NavItem 
             icon={<BarChart3 size={24} />} 
             label="Stats" 
-            active={false} 
+            active={location.pathname === '/stats'} 
+            onClick={() => navigate('/stats')}
           />
           <NavItem 
             icon={<Network size={24} />} 

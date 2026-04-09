@@ -6,6 +6,7 @@ import Landing from './components/Landing';
 import GenreSelection from './components/GenreSelection';
 import CommunityHub from './components/CommunityHub';
 import Identity from './components/Identity';
+import Stats from './components/Stats';
 import StoryPlayer from './components/StoryPlayer';
 import CreateStory from './components/CreateStory';
 
@@ -53,6 +54,7 @@ export default function App() {
             <Route path="/genre-selection" element={<GenreSelection />} />
             <Route path="/community-hub" element={<CommunityHub />} />
             <Route path="/identity" element={<Identity />} />
+            <Route path="/stats" element={<Stats />} />
             <Route path="/create-story" element={<CreateStory />} />
             <Route path="/gameplay" element={<StoryPlayer />} />
             <Route path="*" element={<Landing />} />
