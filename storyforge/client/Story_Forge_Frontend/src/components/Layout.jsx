@@ -29,26 +29,27 @@ export default function Layout({ children }) {
             StoryForge
           </div>
           
-          <nav className="header-nav flex items-center gap-5 ml-5">
-            <NavItem 
-              icon={<BookOpen size={14} />} 
+          <nav className="header-nav">
+            <NavLink 
+              icon={<BookOpen size={16} />} 
               label="Home" 
               active={currentPath === '/' || currentPath === '/landing'} 
               onClick={() => navigate('/', { state: { transition: 'push_back' } })}
             />
-            <NavItem 
-              icon={<Library size={14} />} 
+            <NavLink 
+              icon={<Library size={16} />} 
               label="Library" 
               active={currentPath === '/genre-selection'} 
               onClick={() => navigate('/genre-selection', { state: { transition: 'push_back' } })}
             />
-            <NavItem 
-              icon={<BarChart3 size={14} />} 
+            <NavLink 
+              icon={<BarChart3 size={16} />} 
               label="Stats" 
-              active={false} 
+              active={currentPath === '/stats'} 
+              onClick={() => navigate('/stats')}
             />
-            <NavItem 
-              icon={<Network size={14} />} 
+            <NavLink 
+              icon={<Network size={16} />} 
               label="Nexus" 
               active={currentPath === '/community-hub'} 
               onClick={() => navigate('/community-hub', { state: { transition: 'push_back' } })}
@@ -65,63 +66,18 @@ export default function Layout({ children }) {
             <span>Create Story</span>
           </button>
           
-          <div className="flex items-center pl-4 border-l border-white/10">
-            <div 
-              className="profile-image-wrapper rounded-full border border-primary/20 cursor-pointer overflow-hidden hover:border-primary transition-colors"
-              onClick={() => navigate('/identity', { state: { transition: 'slide_up' } })}
-            >
-              <img 
-                className="w-full h-full object-cover" 
-                src="/assets/profile-avatar.png" 
-                alt="Profile"
-              />
-            </div>
+          <div className="header-avatar-wrapper" onClick={() => navigate('/identity', { state: { transition: 'slide_up' } })}>
+            <img 
+              src="/assets/profile-avatar.png" 
+              alt="Profile"
+            />
           </div>
         </div>
       </header>
 
 
-      {/* SideNavBar Perspective Rail */}
-      <aside className="side-nav-bar glass-panel">
-        <div className="profile-container click-target" onClick={() => navigate('/identity', { state: { transition: 'slide_up' } })}>
-          <div className="profile-image-wrapper">
-            <img 
-              className="profile-img" 
-              src="/assets/profile-avatar.png" 
-              alt="Profile"
-              referrerPolicy="no-referrer"
-            />
-          </div>
-        </div>
-        <div className="nav-items-container flex flex-col items-center">
-          <NavItem 
-            icon={<BookOpen size={24} />} 
-            label="Home" 
-            active={currentPath === '/' || currentPath === '/landing'} 
-            onClick={() => navigate('/', { state: { transition: 'push_back' } })}
-          />
-          <NavItem 
-            icon={<Library size={24} />} 
-            label="Library" 
-            active={currentPath === '/genre-selection'} 
-            onClick={() => navigate('/genre-selection', { state: { transition: 'push_back' } })}
-          />
-          <NavItem 
-            icon={<BarChart3 size={24} />} 
-            label="Stats" 
-            active={currentPath === '/stats'} 
-            onClick={() => navigate('/stats')}
-          />
-          <NavItem 
-            icon={<Network size={24} />} 
-            label="Nexus" 
-            active={currentPath === '/community-hub'} 
-            onClick={() => navigate('/community-hub', { state: { transition: 'push_back' } })}
-          />
-        </div>
-      </aside>
 
-      <main className="main-content min-h-screen">
+      <main className="main-content-no-sidebar min-h-screen">
         {children}
       </main>
 
@@ -178,6 +134,18 @@ export default function Layout({ children }) {
         </div>
       </footer>
     </div>
+  );
+}
+
+function NavLink({ icon, label, active, onClick }) {
+  return (
+    <button
+      className={`header-nav-link ${active ? 'active' : ''}`}
+      onClick={onClick}
+    >
+      {icon}
+      <span>{label}</span>
+    </button>
   );
 }
 
